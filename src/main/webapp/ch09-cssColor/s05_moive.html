@@ -6,19 +6,18 @@
 <style type="text/css">
 	@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
 body{
-	background-image:url(../files/사막배경.jpg);
-	background-repeat:no-repeat;
-	background-position:center center;
-	background-attachment:fixed;
+	background:url(../files/사막배경.jpg) no-repeat center center fixed;
 	background-size:cover;
 }
 table{
 	margin:auto;
 }
-h2{
+
+h1,h2{
 	font-family: 'Cute Font', cursive;
 	text-align:center;
-	
+	color:rgb(255, 255, 255);
+	background-color: rgb(150,20,20);
 }
 
 h3{
@@ -28,14 +27,12 @@ h3{
 dt{
 	font-family:serif;
 	font-size:15pt;
-	list-style-image:url(../files/bullet.gif);
 	font-weight:600;
 }
 dd{
 	font-weight:500;
 }
 input[type=checkbox]:checked + div{
-
 	height:0px;
 }
 
@@ -44,6 +41,24 @@ div{
 	height:100px;
 	overflow:auto;
 	transition-duration:1s;
+}
+div.box{
+	width:1000px;
+	height:320px;
+	white-space:nowrap;
+}
+div.box2{
+	width:1000px;
+	height:320px;
+	position:center center;
+	
+}
+p[class="character"] {color:white; background-color:gray; font-size:10pt;}
+#t1{white-space:nowrap;}
+
+li.card{
+	display: inline-block;
+	
 }
 
 fieldset{
@@ -54,15 +69,25 @@ legend{
 	font-size:15pt
 }
 
-li a img{
-	display: inline-block;
+#info{
+	width:1000px;
+	height:320px;
+	position:center center;
+	
 }
+#info img{
+	float:left;
+}
+#info .content{
+	clear:both;
+}
+	
 
 </style>
 </head>
 <body>
-<h2>개봉 예정작</h2>
-<table border = "">
+<h1>개봉 예정작</h1>
+<table border = "" id = "t1">
 	<tr>
 		<td><img src = "../files/듄2배경1.jpg" width = "500" height = "600" style="margin-left: auto; margin-right: auto; display: block;"/></td>
 		<td>
@@ -106,8 +131,8 @@ li a img{
 <table>
 	<tr>
 		<td>
-		<fieldset>
-			<legend>파트2 보기 전 파트 1 정리</legend>
+		<fieldset >
+			<legend id = "t1">파트2 보기 전 파트 1 정리</legend>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/FOuAcvhqjEQ?si=97Fv8VTkmZBbovWT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			<br>
 			<input type = "checkbox" checked>설명(체크 풀면 내용 보임)
@@ -133,8 +158,10 @@ li a img{
 <table>
 	<tr>
 	<td>
-		<fieldset style = "width:1000px">
-			<legend>주요출연진</legend>
+			<h3>주요출연진</h3>
+			
+				<div class = "box">
+					<ol>
                     <li class="card">
                       <a href="https://www.themoviedb.org/person/1190668-timothee-chalamet">
                               <img src="../files/Timothee Chalamet.jpg" alt="Timothée Chalamet">
@@ -206,16 +233,32 @@ li a img{
                       <p><a href="https://www.themoviedb.org/person/196179-stephen-henderson">Stephen McKinley Henderson</a></p>
                       <p class="character">Thufir Hawat</p>
                     </li>
-                </ol>
-              </span>
-			</fieldset>
+              	  </ol>
+				</div>
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>
+			<div class="box2">
+				<ol>
+					<li id = "info">
+					<img src="../files/듄 짤.gif" alt="짤">
+						<p class="title">영화 듄2는 2024년 3월 15일에 개봉 예정이다.</p>
+						<p class="content">듄2는 듄1의 후속작으로, 듄1에서 이어지는 내용을 담고 있다. 듄1은 2021년에 개봉되었으며, 전 세계에서 4,000만 달러 이상의 수익을 올리며 큰 성공을 거뒀다.
+						드니 빌뇌브 감독은 듄2의 촬영을 2022년 7월부터 시작했다. 듄2의 제작이 확정된 것은 2021년 10월 26일이다. 듄2는 전 세계적으로 기대되는 작품 중 하나이다.
+						듄2의 개봉일이 확정된 후, 영화 팬들은 이 작품을 기다리며 더 많은 정보와 예고편을 기다리고 있다. 듄2는 이전작보다 더 많은 액션과 스펙터클한 장면을 담고 있을 것으로 예상된다.</p>
+					</li>
+				</ol>
+			</div>
 		</td>
 	</tr>
 </table>
 <table>
 <h2>예고편</h2>
 	<tr>
-		<td>
+		<td id="t1">
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/81JOj5-xNGc?si=LfWCtjUDqgYqQLSF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 	
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/4JElrZ1WB40?si=OY4jVdUIA6ruzVOv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
