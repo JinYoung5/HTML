@@ -47,14 +47,62 @@ div.box{
 	height:320px;
 	white-space:nowrap;
 }
-div.box2{
-	width:1000px;
+div.box::-webkit-scrollbar {
+    width: 10px;
+  }
+div.box::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+div.box::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+ }
+ 	
+div.bos{
+	width:700px;
 	height:320px;
-	position:center center;
-	
+	overflow:auto;	
 }
+div.bos::-webkit-scrollbar {
+    width: 10px;
+  }
+div.bos::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+div.bos::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+
+ 
 p[class="character"] {color:white; background-color:gray; font-size:10pt;}
 #t1{white-space:nowrap;}
+
+#t3{text-indent:2em;
+	width:600px;
+	height:150px;
+	border:1px solid black;
+	white-space:nowwrap;
+	text-align:left;
+}
+#t2,t3:first-child{background-color:red;}
+
+a:link{
+	text-decoration: none;
+	color:rgb(229,119,238);
+}
+a:visited{
+	text-decoration: non;
+	color:rgb(0,0,0);
+}
 
 li.card{
 	display: inline-block;
@@ -68,20 +116,6 @@ legend{
 	font-style:oblique;
 	font-size:15pt
 }
-
-#info{
-	width:1000px;
-	height:320px;
-	position:center center;
-	
-}
-#info img{
-	float:left;
-}
-#info .content{
-	clear:both;
-}
-	
 
 </style>
 </head>
@@ -152,13 +186,20 @@ legend{
 		</td>
 	</tr>
 </table>
-<img src = "../files/듄3.jpg" width = "800" height = "1000" style="margin-left: auto; margin-right: auto; display: block;"/>
-	
+<table>
+	<tr>
+		<td>
+			<a href="https://namu.wiki/w/%EB%93%84:%20%ED%8C%8C%ED%8A%B8%202";>
+			<img src = "../files/듄3.jpg" width = "800" height = "1000" style="margin-left: auto; margin-right: auto; display: block;"/></a>
+		</td>
+	</tr>
+</table>
+
             
 <table>
 	<tr>
 	<td>
-			<h3>주요출연진</h3>
+			<h3><mark>주요출연진</mark></h3>
 			
 				<div class = "box">
 					<ol>
@@ -238,19 +279,16 @@ legend{
 		</td>
 	</tr>
 </table>
+<br><br><br><br>
 <table>
 	<tr>
 		<td>
-			<div class="box2">
-				<ol>
-					<li id = "info">
-					<img src="../files/듄 짤.gif" alt="짤">
-						<p class="title">영화 듄2는 2024년 3월 15일에 개봉 예정이다.</p>
-						<p class="content">듄2는 듄1의 후속작으로, 듄1에서 이어지는 내용을 담고 있다. 듄1은 2021년에 개봉되었으며, 전 세계에서 4,000만 달러 이상의 수익을 올리며 큰 성공을 거뒀다.
-						드니 빌뇌브 감독은 듄2의 촬영을 2022년 7월부터 시작했다. 듄2의 제작이 확정된 것은 2021년 10월 26일이다. 듄2는 전 세계적으로 기대되는 작품 중 하나이다.
-						듄2의 개봉일이 확정된 후, 영화 팬들은 이 작품을 기다리며 더 많은 정보와 예고편을 기다리고 있다. 듄2는 이전작보다 더 많은 액션과 스펙터클한 장면을 담고 있을 것으로 예상된다.</p>
-					</li>
-				</ol>
+			<div class="bos">
+			<img src="../files/듄 짤.gif" alt="짤">
+				<p id="t2">영화 듄2는 2024년 3월 15일에 개봉 예정이다.</p>
+				<p id="t3">듄2는 듄1의 후속작으로, 듄1에서 이어지는 내용을 담고 있다. 듄1은 2021년에 개봉되었으며, 전 세계에서 4,000만 달러 이상의 수익을 올리며 큰 성공을 거뒀다.
+				드니 빌뇌브 감독은 듄2의 촬영을 2022년 7월부터 시작했다. 듄2의 제작이 확정된 것은 2021년 10월 26일이다. 듄2는 전 세계적으로 기대되는 작품 중 하나이다.
+				듄2의 개봉일이 확정된 후, 영화 팬들은 이 작품을 기다리며 더 많은 정보와 예고편을 기다리고 있다. 듄2는 이전작보다 더 많은 액션과 스펙터클한 장면을 담고 있을 것으로 예상된다.</p>
 			</div>
 		</td>
 	</tr>
@@ -285,7 +323,7 @@ legend{
 			</li>
 			<li>
 			<label for = "email">이메일</label>
-			<input type = "url" name = "url" id = "url" placeholder="aaaa@aaaa.aaa">
+			<input type = "email" name = "email" id = "email" placeholder="aaaa@aaaa.aaa">
 			</li>
 		</ul>
 				<span>
@@ -295,7 +333,7 @@ legend{
     				<label for="핸드푠">핸드폰</label>
     			</span>
     			<input type = "submit" value = "전송">
-    		
+    			</form>
 
 	</fieldset>
 </form>
