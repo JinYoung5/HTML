@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/*
+[실습]
+국어,영어,수학을 입력 받아서 총점,평균을 구하여 출력
+유효성 체크 : 성적 미입력시 ->'성적을 입력하세요', 0~100 범위를 벗어나면 -> '0~100 입력 가능'
+[출력 예시]
+국어 : 99
+영어 : 98
+수학 : 97
+총점 : 294
+평균 : 229.33333
+*/
+window.onload=function(){
+	//이벤트 연결
+	document.getElementById('confirm_btn').onclick=function(){
+		let korean = document.getElementById('korean');
+		if(!check(korean,'국어')){
+			return;
+		}
+		let english = document.getElementById('english');
+		if(!check(english,'영어')){
+			return;
+		}
+		let math = document.getElementById('math');
+		if(!check(math,'수학')){
+			return;
+		}
+		
+		//유효성 체크
+		//총점 구하기
+		//input 태그에 명시한 데이터는 string으로 인식하기 떄문에 명시적으로 형변환
+		let sum = Number(korean.value) + Number(english.value) + Number(math.value);
+		//평균 구하기
+		let avg = sum/3;
+		//div에 출력
+		let msg = '';
+		msg += '국어 : ' + korean.value + '<br>';
+		msg += '영어 : ' + english.value + '<br>';
+		msg += '수학 : ' + math.value + '<br>';
+		msg += '총점 : ' + sum + '<br>';
+		msg += '평균 : '	+ avg.toFixed(2); //소수점 2째 자리 까지 보임
+		
+		document.getElementById('result').innerHTML = msg;
+	};
+	
+	//유효성 체크 함수
+	function check(course,name){
+		//course : input 태그
+		//name : 과목명
+		if(course.value.trim()==''){
+			alert(name + '성적을 입력하세요!');
+			course.value =''; //공백이 있으면 제거
+			course.focus();
+			return false;
+		}
+		if(isNaN(course.value)){//문자인지 숫자인지 체크
+			//숫자가 아닌 경우
+			alert(name + '성적은 숫자만 가능');
+			course.value = '';
+			course.focus();
+			return false;
+		}
+		if(!Number.isInteger(Number(course.value))){ //정수인지 체크
+			//정수가 아닌 경우
+			alert('정수만 입력 가능');
+			course.value='';
+			course.focus();
+			return false;
+		}
+		if(course.value<0 || course.value>100){
+			alert('0부터 100까지만 입력 가능');
+			course.value='';
+			course.focus();
+			return false;
+		}
+		return true;
+	}
+};
+</script>
+</head>
+<body>
+<form>
+	국어 <input type="text" name="korean" id="korean"><br>
+	영어 <input type="text" name="english" id="english"><br>
+	수학 <input type="text" name="math" id="math"><br>
+	<input type="button" value="확인" id="confirm_btn">
+	<div id="result"></div>
+</form>
+</body>
+</html>
