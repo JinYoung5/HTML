@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+//문서가 준비 완료되면 매개 변수로 전달된 함수를 실행
+//$(document).ready(function(){}); 과 같음
+$(function(){
+	//태그의 내용을 제어. HTML 태그 허용
+	$('div').html('<h1>날씨가 흐린 오전!');
+	//태그의 내용을 제어. HTML 태그를 허용하지 않고 text로 처리
+	$('p').text('<h1>놀이동산의 곰인형</h1>');
+});
+</script>
+</head>
+<body>
+	<div></div>
+	<p></p>
+</body>
+</html>

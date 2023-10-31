@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+//문서가 준비 완료되면 매개 변수로 전달된 함수를 실행
+//$(document).ready(function(){}); 과 같음
+$(function(){
+	//h1 태그에 일괄적으로 스타일 부여
+	//$('h1').css('color','red');
+	
+	const color = ['red','yellow','purple'];
+	const background = ['gray','pink','yellow'];
+	
+	//h1태그에 서로 다른 스타일 부여
+	/*
+	$('h1').css('color',function(index){
+		return color[index];
+		
+	});
+	*/
+	
+	//h1태그에 복수의 스타일 적용
+	$('h1').css({
+		color:function(index){
+			return color[index];
+		},
+		backgroundColor:function(index){
+			return background[index];
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>
+</body>
+</html>

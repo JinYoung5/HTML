@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+//문서가 준비 완료되면 매개 변수로 전달된 함수를 실행
+//$(document).ready(function(){}); 과 같음
+$(function(){
+	//3초후에 매개변수로 전달된 함수 실행
+	setTimeout(function(){
+		$('h1').removeAttr('align'); //속성 제거
+	},3000);
+});
+</script>
+</head>
+<body>
+	<h1 align="center">header-0</h1>
+	<h1>header-0</h1>
+	<h1>header-0</h1>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+//문서가 준비 완료되면 매개 변수로 전달된 함수를 실행
+//$(document).ready(function(){}); 과 같음
+$(function(){
+	
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>
+-->
